@@ -126,7 +126,7 @@
         } else if(!emailChk) {
             alert('이메일을 인증을 진행해 주세요!');
             return;
-        } else if(document.getElementById('phoneNm').value == ''){
+        } else if(document.getElementById('phoneNum').value == ''){
             alert('휴대폰번호를 입력해주세요!');
             return;
         }

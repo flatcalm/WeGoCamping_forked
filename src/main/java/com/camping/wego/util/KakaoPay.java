@@ -94,9 +94,9 @@ private static final String HOST = "https://kapi.kakao.com";
         params.add("quantity",  String.valueOf(vo.getQuantity()) );
         params.add("total_amount", String.valueOf(vo.getAmount()*vo.getQuantity()) );
         params.add("tax_free_amount", "0");
-        params.add("approval_url", "http://localhost/kakaoPaySuccess/");
-        params.add("cancel_url", "http://localhost/rsv/3");
-        params.add("fail_url", "http://localhost/rsv/2");
+        params.add("approval_url", "http://118.217.203.50/kakaoPaySuccess/");
+        params.add("cancel_url", "http://118.217.203.50/rsv/"+String.valueOf(vo.getCno()));
+        params.add("fail_url", "http://118.217.203.50/rsv/2");
         
          HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
  

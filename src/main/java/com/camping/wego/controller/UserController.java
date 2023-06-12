@@ -82,7 +82,7 @@ public class UserController {
 		log.info("회원가입 요청이 들어옴: POST");
 		log.info(vo.toString());
 		service.join(vo);
-		return "board/boardList";
+		return "user/login";
 	}
 
 	// 이메일 인증 요청

@@ -32,6 +32,7 @@
   <!-- 부트스트랩 끝 -->
 
   <link href="${pageContext.request.contextPath}/css/header-style.css" rel="stylesheet">
+  <link rel="icon" href="${pageContext.request.contextPath}/img/icon.png">
 </head>
 
 <body>
@@ -121,6 +122,7 @@
 <img src="${pageContext.request.contextPath}/img/left.gif" alt="" id="background-right">
 <img src="${pageContext.request.contextPath}/img/moon2.png" alt="" id="moon">
 <img src="${pageContext.request.contextPath}/img/hae.png" alt="" id="hae">
+<img src="${pageContext.request.contextPath}/img/car.png" alt="" id="car">
 <script>
   console.log(" ${login}");
   if ("${login}" !== '') {
@@ -170,6 +172,7 @@
   document.getElementById('moon').onclick = () =>{
     document.getElementById('moon').setAttribute('src','${pageContext.request.contextPath}/img/moon.png');
     document.getElementById('background-left').setAttribute('src','${pageContext.request.contextPath}/img/campilluNC.png');
+    
   }
   window.location.reload = () =>{
     document.getElementById('background-right').style.top = '74%';
@@ -179,8 +182,20 @@
 			const height = document.documentElement.offsetHeight ;
 			const windowHeight = window.innerHeight;
       const scrollbarWidth = height - scrollPosition; 
-      if(scrollbarWidth < 1050) document.getElementById('background-right').style.top = (74-(1-Math.abs(938-scrollbarWidth)/112)*10)+'%';
-      else document.getElementById('background-right').style.top = '74%';
+      document.getElementById('car').style.left = ((scrollbarWidth-windowHeight)/(height-windowHeight)*143-55)+'px';
+      // console.log((scrollbarWidth-windowHeight)/(height-windowHeight));
+      if(scrollbarWidth < 1050) {
+        document.getElementById('background-right').style.top = (74-(1-Math.abs(938-scrollbarWidth)/112)*10)+'%';
+        document.getElementById('car').style.top = (89-(1-Math.abs(938-scrollbarWidth)/112)*11)+'%';
+        
+      }
+      else {
+        document.getElementById('background-right').style.top = '74%';
+        document.getElementById('car').style.top = '89%';
+        document.getElementById('car').style.left = '-55px';
+      }
+
+      
 
       // console.log('스크롤포지션: (스크롤의 실시간위치)'+scrollPosition);
       // console.log('높이: (현재페이지의 총 높이)'+height);
@@ -189,5 +204,8 @@
       // console.log(height);
       // console.log(window.innerHeight);
       // console.log('스크롤바의 길이: '+scrollbarWidth);
+  }
+  window.onload = () =>{
+    document.getElementById('background-right').style.top = '74%';
   }
 </script>

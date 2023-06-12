@@ -364,10 +364,20 @@ a:hover, a:active {
     z-index: 999;
 }
 #hae {
-        position: fixed;
+    position: fixed;
     /* right: 57px; */
     left: 60px;
     top: 8.6%;
+    transform: translateX(-50%);
+    width: 140px;
+    opacity: 0.15;
+    z-index: -999;
+}
+#car {
+    position: fixed;
+    /* right: 57px; */
+    left: -55px; /*-55*/
+    top: 89%; /*78*/
     transform: translateX(-50%);
     width: 140px;
     opacity: 0.15;
